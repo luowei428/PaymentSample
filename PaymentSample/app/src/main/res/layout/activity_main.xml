@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sample.paymentsample.MainActivity">
+
+
+    <ImageButton
+        android:id="@+id/btnAlipay"
+        android:layout_width="210dp"
+        android:layout_height="74dp"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/alipay"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnPaypal"
+        app:layout_constraintBottom_toTopOf="@id/btnWepay"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <ImageButton
+        android:id="@+id/btnPaypal"
+        android:layout_width="215dp"
+        android:layout_height="73dp"
+        android:adjustViewBounds="false"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/paypal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnAlipay"/>
+
+    <ImageButton
+        android:id="@+id/btnWepay"
+        android:layout_width="123dp"
+        android:layout_height="92dp"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/wepay"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlipay"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</android.support.constraint.ConstraintLayout>
