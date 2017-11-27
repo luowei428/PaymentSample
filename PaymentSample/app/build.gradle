@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'org.sonarqube'
+apply plugin: 'jacoco-android'
 
 android {
     compileSdkVersion 26
@@ -19,6 +19,27 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+}
+
+jacocoAndroidUnitTestReport {
+    csv.enabled false
+    html.enabled false
+    xml.enabled true
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "PaymentSample-Android"
+        property "sonar.anroid.lint.report", "build/outputs/lint-results-debug.xml"
+        property "sonar.tests", "./src/test/"
+        property "sonar.jacoco.reportPath", fileTree(dir:project.projectDir, includes: ['**/*.exec'])
+        property "sonar.java.test.binaries", "${project.buildDir}/intermediates/classes/debug"
+        property "sonar.jacoco.itReportPath", fileTree(dir:project.projectDir, includes: ['**/*.ec'])
+        //property "sonar.analysis.mode", "preview"
+        //property "sonar.github.oauth", "696bda3f67debaf13d2c607c1072c12dfbe2de0b"
+        //property "sonar.github.repository", "luowei428/PaymentSample"
+        // property "sonar.github.pullRequest" ""
     }
 }
 
