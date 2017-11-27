@@ -36,10 +36,10 @@ sonarqube {
         property "sonar.jacoco.reportPath", fileTree(dir:project.projectDir, includes: ['**/*.exec'])
         property "sonar.java.test.binaries", "${project.buildDir}/intermediates/classes/debug"
         property "sonar.jacoco.itReportPath", fileTree(dir:project.projectDir, includes: ['**/*.ec'])
-        //property "sonar.analysis.mode", "preview"
-        //property "sonar.github.oauth", "696bda3f67debaf13d2c607c1072c12dfbe2de0b"
-        //property "sonar.github.repository", "luowei428/PaymentSample"
-        // property "sonar.github.pullRequest" ""
+        property "sonar.analysis.mode", "preview"
+        property "sonar.github.oauth", "ceb118ba3b28d4f1a7ba83457a4c09a1e63e50f7"
+        property "sonar.github.repository", "luowei428/PaymentSample"
+        property "sonar.github.pullRequest", "1"
     }
 }
 
