@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity(), TaskCompleteListener {
 
     private fun getClientTokenFromServer() {
         val client = AsyncHttpClient();
-        client.get("http://127.0.0.1:8080/braintree", object : TextHttpResponseHandler() {
+        client.get("http://10.0.2.2:7070/braintree", object : TextHttpResponseHandler() {
             override fun onFailure(statusCode: Int, headers: Array<out Header>?, responseString: String?, throwable: Throwable?) {
                 Log.i(TAG, getString(R.string.token_failed) + responseString)
             }
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity(), TaskCompleteListener {
     private fun sendPaymentNonceToServer(paymentNonce: String) {
         val params = RequestParams("NONCE", paymentNonce)
         val androidClient = AsyncHttpClient()
-        androidClient.post("http://127.0.0.1:8080/braintree/", params, object : TextHttpResponseHandler(){
+        androidClient.post("http://10.0.2.2:7070/braintree/", params, object : TextHttpResponseHandler(){
             override fun onSuccess(statusCode: Int, headers: Array<out Header>?, responseString: String?) {
                 Log.i(TAG, "Output " + responseString)
             }
